@@ -2,12 +2,11 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Main {
-
-    public static int Cheapest , Chosen , Median , count;
+public class Main extends Functional {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Functional Obj = new Functional();
         int a =1, option= 0;
 
         for (int i=0; i<=90; i++){
@@ -39,11 +38,11 @@ public class Main {
             switch (option){
 
                 case 1:
-                    HousesPrice();
+                    Obj.HousesPrice();
                     break;
 
                 case 2:
-                    System.out.println("This is case 2");
+                    Obj.AvocadoToast();
                     break;
                 case 3:
                     System.out.println("This is case 3");
@@ -61,48 +60,6 @@ public class Main {
 
 
     }
-    public static void HousesPrice(){
 
-        ////////Enter Cheapest House///////////
-
-         System.out.println("Hosue Details : \n" + "Enter price for cheapest house listing: ");
-         Scanner input = new Scanner(System.in);
-         while (!input.hasNextInt()){
-
-             System.out.println("Invalid");
-               input.next();
-               }
-             Cheapest = input.nextInt();
-
-       /////////Enter Chosen House///////////////
-
-        System.out.println( "Enter price for chosen house: ");
-        while (!input.hasNextInt()){
-
-            System.out.println("Invalid");
-            input.next();
-        }
-        Chosen = input.nextInt();
-
-     ///////////Enter Median House/////////////////
-
-        System.out.println( "Enter price for median house in area: ");
-        while (!input.hasNextInt()){
-
-            System.out.println("Invalid");
-            input.next();
-        }
-        Median = input.nextInt();
-
-        if (!((Cheapest < Chosen) && (Cheapest < Median))){
-
-            Cheapest = 0;
-            //Daniyal
-
-
-        }
-
-
-    }
 
 }
