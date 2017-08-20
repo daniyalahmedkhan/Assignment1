@@ -20,7 +20,7 @@ public class Main extends Functional {
             System.out.print(" ");
         }
         System.out.println("SAVE A HOUSE DEPOSIT CALCULATOR \n");
-        System.out.println(" “Developed by” Daniyal, then your student id, then finally “ for ITECH1000 Sem 2 2017” \n ");
+        System.out.println(" “Developed by” Daniyal, Stu-Id-00xx, “ for ITECH1000 Sem 2 2017” \n ");
         for (int i=0; i<=90; i++){
 
             System.out.print("*");
@@ -48,8 +48,8 @@ public class Main extends Functional {
                     System.out.println("This is case 3");
                     break;
                 case 4:
-                    System.out.println("This is case 4");
-                    break;
+                    return;
+
                 default:
                     break;
 
