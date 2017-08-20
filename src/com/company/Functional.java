@@ -7,8 +7,17 @@ public class Functional {
 
     private int Cheapest , Chosen , Median  ; //int for houses prices
     private int AvocadoPrice; //int for Avocado on Toast price
-    private double depositCheap;
-    private double SmashedAvocados;
+    private int hundred = 100 , twenty = 20;
+    private double DepositCheap , DepositChosen , DepositMedian; //  to store flat 20% for each
+    private double SmashedAvocados; // to store avocados not to buy
+
+    public int getCheapest() {
+        return Cheapest;
+    }
+
+    public int getAvocadoPrice() {
+        return AvocadoPrice;
+    }
 
     //Houses prices method to collect price with validation.
     public void HousesPrice(){
@@ -46,11 +55,11 @@ public class Functional {
 
         // Condition for cheapest value should be smaller
 
-        if (!((Cheapest < Chosen) && (Cheapest < Median))){
+        if (((Cheapest >= Chosen) || (Cheapest >= Median))){
 
             System.out.println("Cheapest Value should be Smaller");
 
-            while((Cheapest > Chosen) && (Cheapest > Median)){
+            while(!((Cheapest < Chosen) && (Cheapest < Median))){
 
                 Cheapest = 0; //Taking again cheapest house price if not smaller in all three
                 System.out.println( "Enter price for cheapest house: ");
@@ -102,14 +111,31 @@ public class Functional {
         System.out.println("\n You will not to buy:");
         for (int i =0; i<1; i++){
 
-            depositCheap = (Cheapest/100) * 20;
-            SmashedAvocados = (depositCheap/AvocadoPrice);
-            DecimalFormat df = new DecimalFormat("#.00");
-            String d = df.format(depositCheap);
+            DecimalFormat df = new DecimalFormat("#.00"); // formatting two decimal format
+
+            DepositCheap = (Cheapest/hundred) * twenty; // flat 20% of given price for cheapest
+            SmashedAvocados = (DepositCheap/AvocadoPrice); // calculating not to buy avocados
+
+            String d = df.format(DepositCheap);
             String s = df.format(SmashedAvocados);
-            System.out.println(s + "Cheapest" + d);
-            System.out.println("Chosen");
-            System.out.println("Median");
+            System.out.println(s + " Cheapest " + d);
+            //////////////////////////////////////
+            DepositChosen = (Chosen/hundred) * twenty; // flat 20% of given price for chosen
+            SmashedAvocados = (DepositChosen/AvocadoPrice); // calculating not to buy avocados
+
+            d = df.format(DepositChosen);
+            s = df.format(SmashedAvocados);
+
+            System.out.println(s + " Chosen " + d);
+            //////////////////////////////////////
+
+            DepositMedian = (Median/hundred) * twenty; // flat 20% of given price for chosen
+            SmashedAvocados = (DepositMedian/AvocadoPrice); // calculating not to buy avocados
+
+            d = df.format(DepositMedian);
+            s = df.format(SmashedAvocados);
+
+            System.out.println(s + " Median " + d );
 
         }
         for (int i = 0; i<90; i++ ){

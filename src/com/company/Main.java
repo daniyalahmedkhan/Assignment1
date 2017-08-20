@@ -7,7 +7,9 @@ public class Main extends Functional {
     public static void main(String[] args) {
 
         Functional Obj = new Functional();
-        int a =1, option;
+        int cheap = Obj.getCheapest(); // to check if user not provide houses price. check switch case 3 below
+        int price = Obj.getAvocadoPrice(); // to check if user not provide avocado price. check switch case 3 below
+        int count =1, option; // count variable to repeat menu and option to take input choice
 
         for (int i=0; i<=90; i++){
 
@@ -45,7 +47,14 @@ public class Main extends Functional {
                     Obj.AvocadoToast();
                     break;
                 case 3:
-                    Obj.DepositCal();
+                    if ((cheap <=  0) && (price <=0)){
+
+                        System.out.println("You need to enter all houses and avocado prices first ");
+                        break;
+                    }else {
+                        Obj.DepositCal();
+                    }
+
                     break;
                 case 4:
                     return;
@@ -56,7 +65,7 @@ public class Main extends Functional {
             }
 
 
-        }while(a==1);
+        }while(count == 1);
 
 
     }
