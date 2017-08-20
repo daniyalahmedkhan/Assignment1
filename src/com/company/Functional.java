@@ -1,11 +1,14 @@
 package com.company;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Functional {
 
-    public int Cheapest , Chosen , Median; //int for houses prices
-    public int AvocadoPrice; //int for Avocado on Toast price
+    private int Cheapest , Chosen , Median  ; //int for houses prices
+    private int AvocadoPrice; //int for Avocado on Toast price
+    private double depositCheap;
+    private double SmashedAvocados;
 
     //Houses prices method to collect price with validation.
     public void HousesPrice(){
@@ -83,8 +86,38 @@ public class Functional {
             return;
         }
 
-        }
+        } // End of AvocadoToast Method
 
+
+        // Deposit Calculator
+
+    public void DepositCal(){
+
+        System.out.println("Deposit Saving Calculator ");
+        for (int i = 0; i<90; i++ ){
+
+            System.out.print("*");
+
+        } // End of asterisks of top
+        System.out.println("\n You will not to buy:");
+        for (int i =0; i<1; i++){
+
+            depositCheap = (Cheapest/100) * 20;
+            SmashedAvocados = (depositCheap/AvocadoPrice);
+            DecimalFormat df = new DecimalFormat("#.00");
+            String d = df.format(depositCheap);
+            String s = df.format(SmashedAvocados);
+            System.out.println(s + "Cheapest" + d);
+            System.out.println("Chosen");
+            System.out.println("Median");
+
+        }
+        for (int i = 0; i<90; i++ ){
+
+            System.out.print("*");
+
+        } // End of asterisks of bottom
+    }
     }
 
 

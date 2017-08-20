@@ -7,7 +7,7 @@ public class Main extends Functional {
     public static void main(String[] args) {
 
         Functional Obj = new Functional();
-        int a =1, option= 0;
+        int a =1, option;
 
         for (int i=0; i<=90; i++){
 
@@ -45,7 +45,7 @@ public class Main extends Functional {
                     Obj.AvocadoToast();
                     break;
                 case 3:
-                    System.out.println("This is case 3");
+                    Obj.DepositCal();
                     break;
                 case 4:
                     return;
