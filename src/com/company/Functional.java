@@ -190,7 +190,8 @@ public class Functional {
 
             gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);  // adding above calculated weeks in current
             dateNow = formatter.format(gregorianCalendar.getTime());        // after adding getting time
-            System.out.println(dateNow);                             // showing future week when you will be able to collect deposit
+            System.out.println("If you stop buying avocados on toast from today and save the money instead,\n" +
+                    "your deposit for a $" +Chosen+ " house will be saved in the week of week "+dateNow);                             // showing future week when you will be able to collect deposit
 
 
         }

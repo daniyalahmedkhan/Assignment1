@@ -62,6 +62,7 @@ public class Main extends Functional {  // inheritance functional class
 
                     break;
                 case 4:
+                    System.out.println("System is exiting... ..");
                     return;
 
                 default:
