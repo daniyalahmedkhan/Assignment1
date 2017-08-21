@@ -1,13 +1,16 @@
 package com.company;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Functional {
 
     private int Cheapest , Chosen , Median  ; //int for houses prices
     private int AvocadoPrice; //int for Avocado on Toast price
-    private int hundred = 100 , twenty = 20;
+    private int hundred = 100 , twenty = 20 ;
     private double DepositCheap , DepositChosen , DepositMedian; //  to store flat 20% for each
     private double SmashedAvocados; // to store avocados not to buy
 
@@ -92,7 +95,6 @@ public class Functional {
 
             }else {
 
-            return;
         }
 
         } // End of AvocadoToast Method
@@ -129,7 +131,7 @@ public class Functional {
             System.out.println(s + " Chosen " + d);
             //////////////////////////////////////
 
-            DepositMedian = (Median/hundred) * twenty; // flat 20% of given price for chosen
+            DepositMedian = (Median/hundred) * twenty; // flat 20% of given price for Median
             SmashedAvocados = (DepositMedian/AvocadoPrice); // calculating not to buy avocados
 
             d = df.format(DepositMedian);
@@ -143,6 +145,45 @@ public class Functional {
             System.out.print("*");
 
         } // End of asterisks of bottom
+
+        Cal();
+    }
+
+   private void Cal(){
+        int times;
+       int week;
+       double d;
+       String dateNow;
+        System.out.println("How many times a week do you purchase Avocado on Toast?");
+        Scanner input = new Scanner(System.in);
+        while (!input.hasNextInt()){
+
+            System.out.println("Not a Number");
+            input.next();
+
+        }times = input.nextInt();
+        if (times < 0){
+
+            System.out.println("Please Enter Positive Number, Retry Again \n");
+            Cal();
+
+        }else {
+
+            week = (times * AvocadoPrice);
+            System.out.println(week);
+            d = (DepositChosen / week);
+            week = (int) d;
+            System.out.println(week);
+            GregorianCalendar gregorianCalendar = new GregorianCalendar();
+            SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MM/dd"); //format it as per your requirement
+            //String dateNow = formatter.format(gregorianCalendar.getTime());
+            gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);
+            dateNow = formatter.format(gregorianCalendar.getTime());
+            System.out.println(dateNow);
+
+
+        }
+
     }
     }
 
