@@ -113,54 +113,59 @@ public class Functional {
 
             DecimalFormat df = new DecimalFormat("#.00"); // formatting two decimal format
 
-            DepositCheap = (Cheapest/hundred) * twenty; // flat 20% of given price for cheapest house
-            SmashedAvocados = (DepositCheap/AvocadoPrice); // calculating not to buy avocados
+            DepositCheap = (Cheapest/hundred) * twenty;         // flat 20% of given price for cheapest house
+            SmashedAvocados = (DepositCheap/AvocadoPrice);      // calculating not to buy avocados
 
-            Deposit = df.format(DepositCheap); // Saving two decimal format of Deposit Cheapest house in string
-            Smashed = df.format(SmashedAvocados); // Saving two decimal format of Not to Buy Avocados in string
-            System.out.println(Smashed + " smashed avocados on toast to save a " + "$"+DepositCheap +  " deposit for the cheapest house " );
+            Deposit = df.format(DepositCheap);          // Saving two decimal format of Deposit Cheapest house in string
+            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
+            System.out.println(Smashed + " smashed avocados on toast to save a " + "$"+Deposit +  " deposit for the cheapest house " );
+
+            // ***** End of Cheapest house deposit and smashed avocados with two decimal format:
+
+
+            DepositChosen = (Chosen/hundred) * twenty;          // flat 20% of given price for chosen house
+            SmashedAvocados = (DepositChosen/AvocadoPrice);     // calculating not to buy avocados
+
+            Deposit = df.format(DepositChosen);         // Saving two decimal format of Deposit Chosen house in string
+            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
+
+            System.out.println(Smashed + " smashed avocados on toast to save a $" + Deposit +" deposit for the chosen house ");
 
             // ***** End of Cheapest house deposit and smashed avocados with two decimal format:
 
 
-            DepositChosen = (Chosen/hundred) * twenty; // flat 20% of given price for chosen house
-            SmashedAvocados = (DepositChosen/AvocadoPrice); // calculating not to buy avocados
-
-            Deposit = df.format(DepositChosen); // Saving two decimal format of Deposit Chosen house in string
-            Smashed = df.format(SmashedAvocados); // Saving two decimal format of Not to Buy Avocados in string
-
-            System.out.println(Smashed + " Chosen " + Deposit);
-
-            // ***** End of Cheapest house deposit and smashed avocados with two decimal format:
-
-            DepositMedian = (Median/hundred) * twenty; // flat 20% of given price for Median house
+            DepositMedian = (Median/hundred) * twenty;      // flat 20% of given price for Median house
             SmashedAvocados = (DepositMedian/AvocadoPrice); // calculating not to buy avocados
 
-            Deposit = df.format(DepositMedian); // Saving two decimal format of Median  house in string
-            Smashed = df.format(SmashedAvocados); // Saving two decimal format of Not to Buy Avocados in string
+            Deposit = df.format(DepositMedian);         // Saving two decimal format of Median  house in string
+            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
 
-            System.out.println(Smashed + " Median " + Deposit );
+            System.out.println(Smashed + " smashed avocados on toast to save a $" + Deposit + " deposit for a house at the median price " );
 
+
+                    // ***** End of Median house deposit and smashed avocados with two decimal format:
         }
         for (int i = 0; i<90; i++ ){
 
             System.out.print("*");
 
-        } // End of asterisks of bottom
+        }               // End of asterisks of bottom
 
-        Cal(); // calling calender method to calculate weeks:
+        Cal();          // calling calender method to calculate weeks:
     }
 
-    // Calender Method to show in which week you will be saved deposit amount of chosen house start:
+        // Calender Method to show in which week you will be saved deposit amount of chosen house start:
+
    private void Cal(){
-       int times; // local variable to save how much time you purchase avocados in week:
-       int week;  // local variable to save weeks: (DepositChosen) / (times * AvocadosPrice):
+       int times;       // local variable to save how much time you purchase avocados in week:
+       int week;        // local variable to save weeks: (DepositChosen) / (times * AvocadosPrice):
        double doubleWeek; // local variable to store double values of week
        String dateNow;
         System.out.println("\n How many times a week do you purchase Avocado on Toast?");
 
-        // Taking user input while user not given positive number:
-        Scanner input = new Scanner(System.in);
+            // Taking user input while user not given positive number:
+
+       Scanner input = new Scanner(System.in);
         while (!input.hasNextInt()){
 
             System.out.println("Not a Number");
@@ -174,23 +179,23 @@ public class Functional {
 
         }else {
 
-            week = (times * AvocadoPrice); // calculating total expense in week
+            week = (times * AvocadoPrice);          // calculating total expense in week
 
-            doubleWeek = (DepositChosen / week); // calculating week by dividing deposit of chosen house from above week
-            week = (int) doubleWeek; // converting double week value to int because GregorianCalender not accept double
+            doubleWeek = (DepositChosen / week);    // calculating week by dividing deposit of chosen house from above week
+            week = (int) doubleWeek;                // converting double week value to int because GregorianCalender not accept double
 
-            GregorianCalendar gregorianCalendar = new GregorianCalendar(); // GregorianCalender Class
+            GregorianCalendar gregorianCalendar = new GregorianCalendar();  // GregorianCalender Class
 
             SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MM/dd"); //format it as per your requirement
 
-            gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week); // adding above calculated weeks in current
-            dateNow = formatter.format(gregorianCalendar.getTime()); // after adding getting time
-            System.out.println(dateNow); // showing future week when you will be able to collect deposit
+            gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);  // adding above calculated weeks in current
+            dateNow = formatter.format(gregorianCalendar.getTime());        // after adding getting time
+            System.out.println(dateNow);                             // showing future week when you will be able to collect deposit
 
 
         }
 
-    } // end of Calender method:
+    }           // end of Calender method:
     }
 
 
