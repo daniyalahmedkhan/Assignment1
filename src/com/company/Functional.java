@@ -5,6 +5,12 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+// This class contains 4 methods..
+// 1-  housePrice method will save the all three house prices with validation of whole positive no with cheapest should be smaller in all three.
+// 2- avocadoToast method will save the price of avocado on toast with validation whole positive no.
+// 3- depositCal method will calculate 20% flat deposit of all three houses which we saved in housePrice method.
+// 4- cal method is for GregorianCalender it will ask you how many time you purchase avocado then calculate weeks.
+// getCheapest and getAvocadoPrice Getter is returning the value to main in switch case 3 to check user can not select direct deposit without given the amount of houses and avocado.
  class Functional {
 
     private int cheapest , chosen , median  ; //int for houses prices
