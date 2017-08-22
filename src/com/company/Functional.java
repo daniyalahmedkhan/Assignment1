@@ -201,8 +201,13 @@ import java.util.Scanner;
 
 
         }
+       for (int i = 0; i<90; i++ ){
 
-    }           // end of Calender method:
+           System.out.print("*");
+
+       }
+
+   }           // end of Calender method:
     }
 
 
