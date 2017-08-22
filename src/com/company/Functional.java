@@ -191,7 +191,7 @@ import java.util.Scanner;
 
             GregorianCalendar gregorianCalendar = new GregorianCalendar();  // GregorianCalender Class
 
-            SimpleDateFormat formatter= new SimpleDateFormat("yyyy/MM/dd"); //format it as per your requirement
+            SimpleDateFormat formatter= new SimpleDateFormat("dd/MM/yyyy"); //format it as per your requirement
 
             gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);  // adding above calculated weeks in current
             dateNow = formatter.format(gregorianCalendar.getTime());        // after adding getting time
