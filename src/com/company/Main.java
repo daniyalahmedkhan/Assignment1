@@ -41,18 +41,18 @@ public class Main extends Functional {  // inheritance functional class
             switch (option){
 
                 case 1:
-                    Obj.HousesPrice();      // calling from functional class to store 3 house prices
+                    Obj.housesPrice();      // calling from functional class to store 3 house prices
                     break;
 
                 case 2:
-                    Obj.AvocadoToast();     // calling from functional class to store avocado on toast price
+                    Obj.avocadoToast();     // calling from functional class to store avocado on toast price
                     break;
                 case 3:
                     int zero = 0;                       // local variable just to avoid magic number: means hardcoded no direct.
                     int cheap = Obj.getCheapest();      // calling only cheapest house price user can not jump to deposit option
                     int price = Obj.getAvocadoPrice();  // calling avocados price user can not blank its price
                     if ((cheap >  zero) && (price > zero)){
-                        Obj.DepositCal();
+                        Obj.depositCal();
 
                         break;
                     }else {

@@ -5,22 +5,22 @@ import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-public class Functional {
+ class Functional {
 
-    private int Cheapest , Chosen , Median  ; //int for houses prices
-    private int AvocadoPrice; //int for Avocado on Toast price
-    private double DepositCheap , DepositChosen , DepositMedian; //  to store flat 20% for each
-    private double SmashedAvocados; // to store avocados not to buy
+    private int cheapest , chosen , median  ; //int for houses prices
+    private int avocadoPrice;                 //int for Avocado on Toast price
+    private double depositCheap , depositChosen , depositMedian; //  to store flat 20% for each
 
-    public int getCheapest() { return Cheapest;
+
+    public int getCheapest() { return cheapest;
     } // Getter for check Cheapest house price in Main switch case 3.
 
     public int getAvocadoPrice() {
-        return AvocadoPrice;
+        return avocadoPrice;
     } // Getter for check Avocado on Toast price in Main switch case 3.
 
     //Houses prices method start to collect prices with validation.
-    public void HousesPrice(){
+    public void housesPrice(){
 
         //Cheapest House Code start
 
@@ -31,7 +31,7 @@ public class Functional {
             System.out.println("Invalid");
             input.next();
         }
-        Cheapest = input.nextInt();
+        cheapest = input.nextInt();
 
         //Chosen House Code start
 
@@ -41,7 +41,7 @@ public class Functional {
             System.out.println("Invalid");
             input.next();
         }
-        Chosen = input.nextInt();
+        chosen = input.nextInt();
 
         //Median House Code start
 
@@ -51,55 +51,54 @@ public class Functional {
             System.out.println("Invalid");
             input.next();
         }
-        Median = input.nextInt();
+        median = input.nextInt();
 
         // Condition for cheapest value should be smaller in all three start
 
-        if (((Cheapest >= Chosen) || (Cheapest >= Median))){
+        if (((cheapest >= chosen) || (cheapest >= median))){
 
             System.out.println("Cheapest Value should be Smaller");
 
-            while(!((Cheapest < Chosen) && (Cheapest < Median))){
+            while(!((cheapest < chosen) && (cheapest < median))){
 
-                Cheapest = 0; //Taking again cheapest house price if not smaller in all three
+                cheapest = 0; //Taking again cheapest house price if not smaller in all three
                 System.out.println( "Enter price for cheapest house: ");
                 while (!input.hasNextInt()){
 
                     System.out.println("Invalid");
                     input.next();
                 }
-                Cheapest = input.nextInt();
+                cheapest = input.nextInt();
                 }
 
         }
     } // End HousePrice Method here:
 
     //Avocado On Toast Method to Collect price for Avocado start:
-    public void AvocadoToast(){
+    public void avocadoToast(){
         Scanner input = new Scanner(System.in);
         System.out.println( " Enter the price to purchase Avocado on Toast from a local café or restaurant: ");
         while (!input.hasNextInt()){
 
-            System.out.println("Not a Number");
+            System.out.println("Please enter positive whole no: ");
             input.next();
 
         }
-        AvocadoPrice = input.nextInt();
-        if (AvocadoPrice < 0){
+        avocadoPrice = input.nextInt();
+        if (avocadoPrice < 0){
 
             System.out.println("Please Enter Positive Number, Retry Again \n");
-            AvocadoToast();
+            avocadoToast();
 
-            }else {
-
-        }
+            }
 
         } // End of AvocadoToast Method:
 
 
         // Deposit Calculator Method for calculate how much avocado not to buy start:
 
-    public void DepositCal(){
+    public void depositCal(){
+         double smashedAvocados;   // to store avocados not to buy
          int hundred = 100 , twenty = 20 ;
          String Deposit, Smashed;
         System.out.println("Deposit Saving Calculator ");
@@ -113,32 +112,32 @@ public class Functional {
 
             DecimalFormat df = new DecimalFormat("#.00"); // formatting two decimal format
 
-            DepositCheap = (Cheapest/hundred) * twenty;         // flat 20% of given price for cheapest house
-            SmashedAvocados = (DepositCheap/AvocadoPrice);      // calculating not to buy avocados
+            depositCheap = (cheapest/hundred) * twenty;         // flat 20% of given price for cheapest house
+            smashedAvocados = (depositCheap/avocadoPrice);      // calculating not to buy avocados
 
-            Deposit = df.format(DepositCheap);          // Saving two decimal format of Deposit Cheapest house in string
-            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
+            Deposit = df.format(depositCheap);          // Saving two decimal format of Deposit Cheapest house in string
+            Smashed = df.format(smashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
             System.out.println(Smashed + " smashed avocados on toast to save a " + "$"+Deposit +  " deposit for the cheapest house " );
 
             // ***** End of Cheapest house deposit and smashed avocados with two decimal format:
 
 
-            DepositChosen = (Chosen/hundred) * twenty;          // flat 20% of given price for chosen house
-            SmashedAvocados = (DepositChosen/AvocadoPrice);     // calculating not to buy avocados
+            depositChosen = (chosen/hundred) * twenty;          // flat 20% of given price for chosen house
+            smashedAvocados = (depositChosen/avocadoPrice);     // calculating not to buy avocados
 
-            Deposit = df.format(DepositChosen);         // Saving two decimal format of Deposit Chosen house in string
-            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
+            Deposit = df.format(depositChosen);         // Saving two decimal format of Deposit Chosen house in string
+            Smashed = df.format(smashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
 
             System.out.println(Smashed + " smashed avocados on toast to save a $" + Deposit +" deposit for the chosen house ");
 
             // ***** End of Cheapest house deposit and smashed avocados with two decimal format:
 
 
-            DepositMedian = (Median/hundred) * twenty;      // flat 20% of given price for Median house
-            SmashedAvocados = (DepositMedian/AvocadoPrice); // calculating not to buy avocados
+            depositMedian = (median/hundred) * twenty;      // flat 20% of given price for Median house
+            smashedAvocados = (depositMedian/avocadoPrice); // calculating not to buy avocados
 
-            Deposit = df.format(DepositMedian);         // Saving two decimal format of Median  house in string
-            Smashed = df.format(SmashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
+            Deposit = df.format(depositMedian);         // Saving two decimal format of Median  house in string
+            Smashed = df.format(smashedAvocados);       // Saving two decimal format of Not to Buy Avocados in string
 
             System.out.println(Smashed + " smashed avocados on toast to save a $" + Deposit + " deposit for a house at the median price " );
 
@@ -151,12 +150,12 @@ public class Functional {
 
         }               // End of asterisks of bottom
 
-        Cal();          // calling calender method to calculate weeks:
+        cal();          // calling calender method to calculate weeks:
     }
 
         // Calender Method to show in which week you will be saved deposit amount of chosen house start:
 
-   private void Cal(){
+   private void cal(){
        int times;       // local variable to save how much time you purchase avocados in week:
        int week;        // local variable to save weeks: (DepositChosen) / (times * AvocadosPrice):
        double doubleWeek; // local variable to store double values of week
@@ -168,20 +167,20 @@ public class Functional {
        Scanner input = new Scanner(System.in);
         while (!input.hasNextInt()){
 
-            System.out.println("Not a Number");
+            System.out.println("Please enter positive whole no: ");
             input.next();
 
         }times = input.nextInt();
         if (times < 0){
 
             System.out.println("Please Enter Positive Number, Retry Again \n");
-            Cal(); // calling recursive function after failing attempts to save program from timeout:
+            cal(); // calling recursive function after failing attempts to save program from timeout:
 
         }else {
 
-            week = (times * AvocadoPrice);          // calculating total expense in week
+            week = (times * avocadoPrice);          // calculating total expense in week
 
-            doubleWeek = (DepositChosen / week);    // calculating week by dividing deposit of chosen house from above week
+            doubleWeek = (depositChosen / week);    // calculating week by dividing deposit of chosen house from above week
             week = (int) doubleWeek;                // converting double week value to int because GregorianCalender not accept double
 
             GregorianCalendar gregorianCalendar = new GregorianCalendar();  // GregorianCalender Class
@@ -191,7 +190,7 @@ public class Functional {
             gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);  // adding above calculated weeks in current
             dateNow = formatter.format(gregorianCalendar.getTime());        // after adding getting time
             System.out.println("If you stop buying avocados on toast from today and save the money instead,\n" +
-                    "your deposit for a $" +Chosen+ " house will be saved in the week of week "+dateNow);                             // showing future week when you will be able to collect deposit
+                    "your deposit for a $" +chosen+ " house will be saved in the week of week "+dateNow);                             // showing future week when you will be able to collect deposit
 
 
         }
