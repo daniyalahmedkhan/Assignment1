@@ -99,7 +99,7 @@ import java.util.Scanner;
 
     public void depositCal(){
          double smashedAvocados;   // to store avocados not to buy
-         int hundred = 100 , twenty = 20 ;
+         int  hundred = 100 , twenty = 20 ;
          String Deposit, Smashed;
         System.out.println("Deposit Saving Calculator ");
         for (int i = 0; i<90; i++ ){
@@ -190,7 +190,8 @@ import java.util.Scanner;
             gregorianCalendar.add(GregorianCalendar.WEEK_OF_MONTH , week);  // adding above calculated weeks in current
             dateNow = formatter.format(gregorianCalendar.getTime());        // after adding getting time
             System.out.println("If you stop buying avocados on toast from today and save the money instead,\n" +
-                    "your deposit for a $" +chosen+ " house will be saved in the week of week "+dateNow);                             // showing future week when you will be able to collect deposit
+                    "your deposit for a $" +chosen+ " house will be saved in the week of week "+dateNow);
+                            // showing future week when you will be able to collect deposit
 
 
         }
